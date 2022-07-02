@@ -6,6 +6,7 @@ import SearchCity from "../SearchCityForm/SearchCity";
 import classes from "./Home.module.css";
 import MyModal from "../UI/ModalWindow/MyModal";
 import RecentSearches from "../RecentSearches/RecentSearches";
+import WeatherDetails from "../WeatherDetails/WeatherDetails";
 
 const Home: FC = () => {
 
@@ -31,7 +32,9 @@ const Home: FC = () => {
                     setAlreadySearched={setAlreadySearched}
                 />
                 <RecentSearches alreadySearched={alreadySearched} setWeatherInfo={setWeatherInfo}/>
-
+                {weatherInfo &&
+                <WeatherDetails weatherInfo={weatherInfo}/>
+                }
             </MyModal>
         </div>
     );
