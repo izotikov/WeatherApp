@@ -1,0 +1,24 @@
+.myModal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: none;
+  backdrop-filter: blur(7px);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box; }
+
+.myModalContent {
+  display: flex;
+  justify-content: end; }
+
+.myModal.active {
+  display: flex;
+  justify-content: end;
+  align-items: start; }
+
+/*# sourceMappingURL=MyModal.module.css.map */

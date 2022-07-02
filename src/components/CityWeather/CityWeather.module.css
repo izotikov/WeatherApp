@@ -1,0 +1,42 @@
+.infoBlock {
+  display: flex;
+  align-items: end; }
+
+.mainBody {
+  display: flex;
+  padding: 25px 250px 200px 250px;
+  color: white;
+  font-size: 30px;
+  text-shadow: 2px 2px black;
+  gap: 15px; }
+
+.tempr {
+  font-size: 100px;
+  line-height: 1; }
+
+.cityAndDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: end; }
+
+.city {
+  font-size: 50px; }
+
+.date {
+  font-size: 20px; }
+
+.condition {
+  max-width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 5px; }
+
+.conditionIcon {
+  margin-bottom: 5px; }
+
+.conditionText {
+  font-size: 14px; }
+
+/*# sourceMappingURL=CityWeather.module.css.map */

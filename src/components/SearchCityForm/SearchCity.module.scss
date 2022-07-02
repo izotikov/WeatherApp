@@ -1,0 +1,25 @@
+.searchBox {
+  display: flex;
+}
+
+.searchImg {
+  background-color: orange;
+  padding: 30px;
+  cursor: pointer;
+}
+
+.inputSearch {
+  min-width: 250px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #a2a2a2;
+  color: white;
+  align-self: end;
+  margin: 0 45px;
+}
+
+.inputSearch::placeholder {
+  color: #a2a2a2;
+}

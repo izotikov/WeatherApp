@@ -1,0 +1,10 @@
+.mainRoot {
+  background-image: url("/src/img/sunset.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex; }
+
+/*# sourceMappingURL=Home.module.css.map */
