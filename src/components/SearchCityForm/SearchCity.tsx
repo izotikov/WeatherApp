@@ -11,21 +11,41 @@ interface searchCityInt {
     onChange: (val: string) => void;
     setWeatherInfo: (val:Data | undefined) => void;
     setValue: (val: string) => void;
+    setAlreadySearched: (val:string[]) => void;
+    alreadySearched: string[];
 }
 
-const SearchCity: FC<searchCityInt> = ({ value, onChange, setWeatherInfo, setValue}) => {
+const SearchCity: FC<searchCityInt> = ({
+                                           value,
+                                           onChange,
+                                           setWeatherInfo,
+                                           setValue,
+                                           setAlreadySearched,
+                                           alreadySearched
+}) => {
+
+    async function searching() {
+        const requestResult = await getArray(value);
+        setValue("");
+        setWeatherInfo(requestResult);
+        if (requestResult) {
+            setAlreadySearched([...alreadySearched, requestResult.location.name])
+        }
+        if (alreadySearched.length >= 3 && requestResult) {
+            let alreadySearchedTemp = alreadySearched.filter((p, i) => i !== 0);
+            setAlreadySearched([...alreadySearchedTemp, requestResult.location.name])
+        }
+    }
+
 
     async function searchClicked(e: React.MouseEvent) {
         e.preventDefault();
-        const temp = await getArray(value);
-        setValue("");
-        setWeatherInfo(temp);
+        searching();
+
     }
 
     async function enterClickedSearch() {
-        const temp = await  getArray(value);
-        setValue("");
-        setWeatherInfo(temp);
+        searching();
     }
 
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,6 +53,7 @@ const SearchCity: FC<searchCityInt> = ({ value, onChange, setWeatherInfo, setVal
     }
 
     const keyPressed = (buttn: React.KeyboardEvent<HTMLInputElement>) => {
+        // eslint-disable-next-line eqeqeq
         if (buttn.code == "Enter") {
             enterClickedSearch();
         }

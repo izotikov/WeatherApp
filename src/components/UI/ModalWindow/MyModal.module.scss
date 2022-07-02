@@ -4,7 +4,6 @@
   top: 0;
   bottom: 0;
   height: 100%;
-  display: none;
   backdrop-filter: blur(7px);
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -16,6 +15,7 @@
 .myModalContent {
   display: flex;
   justify-content: end;
+  flex-direction: column;
 }
 
 .myModal.active {
